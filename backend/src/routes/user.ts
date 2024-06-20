@@ -37,7 +37,7 @@ userRouter.post("/signup", async (c) => {
       },
       c.env.JWT_SECRET
     );
-    return c.text(jwt);
+    return c.json(jwt);
   } catch (e) {
     c.status(411);
     return c.text("Bad request | User already exists");
